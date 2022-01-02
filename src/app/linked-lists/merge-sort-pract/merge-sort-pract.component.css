@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 20em;
+}
+
+.num {
+  margin-inline-end: 0.5rem;
+  color: white;
+  background-color: rgb(51, 51, 255);
+  padding: 0.1rem 0.3rem;
+}

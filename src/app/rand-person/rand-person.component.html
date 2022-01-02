@@ -1,0 +1,9 @@
+<div class="row">
+  <p>URL: </p>
+  <input type="text" [(ngModel)]="url" name="url">
+  <button (click)="submit(url)">Get My API!!</button>
+  <hr>
+</div>
+<div class="apiDisplay">
+  <pre>{{apiText  }}</pre>
+</div>

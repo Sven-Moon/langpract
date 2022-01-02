@@ -1,0 +1,13 @@
+.apiDisplay {
+  width: 400px;
+  box-sizing: border-box;
+  height: 10rem;
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0.5rem;
+}

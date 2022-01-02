@@ -1,0 +1,36 @@
+<label for="newList"> Start a New List</label>
+<input type="text" name="startVal" id="" [(ngModel)]="startVal">
+<button type="button" (click)="newList(startVal)">New List</button>
+
+<hr>
+<br>
+<label for="addValue"> Value to Add</label>
+<input type="text" name="addValue" id="" [(ngModel)]="addValue">
+<button type="button" (click)="addLink(addValue)">Add Value</button>
+<hr>
+<!-- <br>
+<button type="button" (click)="removeDuplicates(list)">Remove Duplicates</button> -->
+<button type="button" (click)="removeLink()">Remove Top Link</button>
+<hr>
+<br>
+<label for="remValue"> Value to Remove</label>
+<input type="text" name="remValue" id="" [(ngModel)]="remValue">
+<button type="button" (click)="removeNode(remValue)">Remove Node</button>
+<hr>
+<br>
+
+<label for="findVal">Value to Find</label>
+<input type="text" name="findVal" id="" [(ngModel)]="findVal">
+<button type="button" (click)="findNode(findVal)">Find Node</button>
+{{foundNode | json}}
+<!--
+<label for="addValue">Get kth to last node</label>
+<input type="text" name="k" id="" [(ngModel)]="kth">
+<button type="button" (click)="kthToLast(list, kth)">Get Node</button>
+{{foundNode | json}}
+-->
+<hr>
+<br>
+<pre>
+  {{list | json}}
+</pre>

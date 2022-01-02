@@ -1,0 +1,44 @@
+<div class="row">
+    <form #f >
+      <div class="row">
+        <button type="button" (click)="makeLinkedList(f.startValue.value)">
+          Make a new list
+        </button>
+        <label for="startValue">Start Value</label>
+        <input type="text" name="startValue" id="" [(ngModel)]="startValue">
+      </div>
+      <hr>
+      <div class="row">
+        <label for="addValue">Enter a Value to Add, Buddy</label>
+        <input type="text" name="addValue" id="" [(ngModel)]="addValue">
+        <button type="button" (click)="addLink(f.addValue.value)">
+          Add Value
+        </button>
+      </div>
+      <div class="row">
+        <label for="removeValue">Wait, backup</label>
+        <button type="button" (click)="removeLink()">
+          Remove Last Value
+        </button>
+      </div>
+      <div class="row">
+        <label for="findValue">Enter a Value to Find, Buddy</label>
+        <input type="text" name="findValue" id="" [(ngModel)]="findValue">
+        <button type="button" (click)="findLink(f.findValue.value)">
+          Find Value
+        </button>
+      </div>
+      <div class="row">
+        <label for="removeValue">Enter a Value to Remove, Buddy</label>
+        <input type="text" name="removeValue" id="" [(ngModel)]="removeValue">
+        <button type="button" (click)="removeTargetLink(f.removeValue.value)">
+          Remove Value
+        </button>
+      </div>
+      {{found | json}}
+  </form>
+</div>
+<hr>
+Here's your linked list, buddy:
+<pre>{{ myLinkedList | json }}</pre>
+

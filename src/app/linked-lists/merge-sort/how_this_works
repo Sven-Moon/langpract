@@ -1,0 +1,53 @@
+Relative positions when entering mergeSort()
+  [low, ... mid] [right ... high]
+
+  left, mid, & right move while low & high are const
+  When low exceeds mid or right exceeds high, stop compare
+
+  A helper array is generated to draw values from b/c the original is overwritten with duplicates & would lose data otherwise
+
+  How Comparative Arrays grow
+  [low/mid] vs [right/high] ... return sorted array to merge
+  [7] vs [3] -> [3, 7]
+
+  [low, mid] vs [right/high] ... return sorted array to merge
+  [3, 7] vs [5] -> [3, 7, 2]
+
+  [low/mid] vs [right/high] ... return sorted array to merge
+  [_, _, _,5] vs [4] -> [_, _, _, 4, 5]
+
+  [low, mid] vs [right/high] ... return sorted array to merge
+  [_, _, _, 2, 4] vs [5] -> [_, _,  _, 2, 4, 5]
+
+
+
+
+  because both arrays are sorted when you reach them
+  once you reach the end of either array, you can just fill the rest
+  note: this fill is only necessary on the left side because the
+  right is already present in the array (in order)
+
+  EXAMPLE: END COMPARE RIGHT
+  [2, 3, 9, 2, 4, 5] = helper array
+  [2, 3, 9] vs [2, 4, 5]
+  compare:
+  [_, 3, 9, 2, 4, 5]...[(2), 6, 9] vs [(2), 4, 5]
+  [2, _, 9, 2, 4, 5]...[2, (6), 9] vs [(2), 4, 5]
+  [2, 2, _, 2, 4, 5]...[2, (6), 9] vs [2, (4), 5]
+  [2, 2, 4, _, 4, 5]...[2, (6), 9] vs [2, 4, (5)]
+  [2, 2, 4, 5, 4, 5]...[2, (6), 9] vs [2, 4, 5]( )
+  right > high !!
+  end of compare... start fill
+  [2, 2, 4, 5, _, _] ... [2, (6..9)]
+  [2, 2, 4, 5, 6, 9]
+
+  EXAMPLE: END COMPARE LEFT
+  [2, 3, 4, 2, 4, 5]
+  [2, 3, 4] vs [2, 4, 5]
+  compare:
+  [_, 3, 4, 2, 4, 5] ... [(2), 3, 4] vs [(2), 4, 5]
+  [2, _, 4, 2, 4, 5] ... [2, (3), 4] vs [(2), 4, 5]
+  [2, 2, _, 2, 4, 5] ... [2, (3), 4] vs [2, (4), 5]
+  [2, 2, 3, _, 4, 5]  ... [2, 3, (4)] vs [2, (4), 5]
+  [2, 2, 3, 4, 4, 5]  ... [2, 3, 4] ( ) vs [2, 4, (5)]
+  end of compare... start fill ... not needed for right

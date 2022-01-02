@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+.value {
+  display: block;
+  margin: 0.1rem 0.2rem;
+  padding: 0.1rem 0.2rem;
+}
